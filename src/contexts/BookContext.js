@@ -1,4 +1,4 @@
-import React, {createContext, useReducer} from 'react'
+import React, {createContext, useReducer, useEffect} from 'react'
 import uuid from 'uuid/v1'
 import {bookReducer} from '../reducers/bookReducer'
 
@@ -17,7 +17,13 @@ const BookContextProvider = (props) => {
       title: 'Sword of Destiny', 
       author: 'Andrzej Sapkowski', 
       id: uuid()}
-  ])
+  ], () => {
+    const localData = localStorage.getItem('books')
+    return localData ? JSON.parse(localData) : []
+  })
+  useEffect(() => {
+    localStorage.setItem('books', JSON.stringify(books))
+  }, [books])
   return (
     <BookContext.Provider value={{books, dispatch}}>
       {props.children}
