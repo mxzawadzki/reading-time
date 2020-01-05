@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import { BookContext } from '../contexts/BookContext'
 
-const Navbar = () => {
+const Header = () => {
   const {books} = useContext(BookContext)
   return (
     <header className="header">
@@ -11,4 +11,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Header
