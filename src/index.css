@@ -50,7 +50,6 @@ body {
 
 .booklist__item:hover {
   opacity: 0.7;
-  text-decoration: line-through;
 }
 
 .booklist__cover {
@@ -80,4 +79,25 @@ body {
 
 .empty__text {
   color: #272727;
+}
+
+.bookform {
+  padding: 2rem;
+}
+
+.bookform__input {
+  width: 100%;
+  padding: 1rem;
+  margin: .5rem 0;
+  background: #fff;
+  color: #272727;
+  border: 0;
+}
+
+.bookform__submit {
+  margin: .5rem auto;
+  background: #d8d8d8;
+  border: 0;
+  padding: .5rem 2rem;
+  display: block;
 }
