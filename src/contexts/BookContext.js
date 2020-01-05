@@ -1,11 +1,12 @@
-import React, {createContext, useState} from 'react'
+import React, {createContext, useReducer} from 'react'
 import uuid from 'uuid/v1'
+import {bookReducer} from '../reducers/bookReducer'
 
 export const BookContext = createContext()
 
 const BookContextProvider = (props) => {
   // dummy data to start with something
-  const [books, setBooks] = useState([
+  const [books, dispatch] = useReducer(bookReducer, [
     {
       cover: 'https://vignette.wikia.nocookie.net/witcher/images/7/78/Uk_the_last_wish_new.jpg/revision/latest/scale-to-width-down/326?cb=20160617190552', 
       title: 'The Last Wish', 
@@ -17,14 +18,8 @@ const BookContextProvider = (props) => {
       author: 'Andrzej Sapkowski', 
       id: uuid()}
   ])
-  const addBook = (cover, title, author) => {
-    setBooks([...books, {cover, title, author, id: uuid()}])
-  }
-  const removeBook = (id) => {
-    setBooks(books.filter(book => book.id !== id))
-  }
   return (
-    <BookContext.Provider value={{books, addBook, removeBook}}>
+    <BookContext.Provider value={{books, dispatch}}>
       {props.children}
     </BookContext.Provider>
   )
