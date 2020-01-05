@@ -8,11 +8,7 @@ const BookForm = () => {
   const [author, setAuthor] = useState('')
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log('cover:' + cover)
-    console.log('title:' + title)
-    console.log('author:' + author)
     addBook(cover, title, author)
-    console.log(addBook)
     setCover('')
     setTitle('')
     setAuthor('')

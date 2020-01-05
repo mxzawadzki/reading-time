@@ -4,6 +4,7 @@ import uuid from 'uuid/v1'
 export const BookContext = createContext()
 
 const BookContextProvider = (props) => {
+  // dummy data to start with something
   const [books, setBooks] = useState([
     {
       cover: 'https://vignette.wikia.nocookie.net/witcher/images/7/78/Uk_the_last_wish_new.jpg/revision/latest/scale-to-width-down/326?cb=20160617190552', 
