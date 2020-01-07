@@ -5,7 +5,7 @@ const Header = () => {
   const {books} = useContext(BookContext)
   return (
     <header className="header">
-      <h1 className="header__title">Reading time</h1>
+      <h1 className="header__title">Reading <br/>time</h1>
       <p className="header__text">Books to read: {books.length}</p>
     </header>
   )

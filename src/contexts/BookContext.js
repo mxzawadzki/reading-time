@@ -6,20 +6,20 @@ export const BookContext = createContext()
 
 const BookContextProvider = (props) => {
   // dummy data to start with something
-  const [books, dispatch] = useReducer(bookReducer, [
-    {
-      cover: 'https://vignette.wikia.nocookie.net/witcher/images/7/78/Uk_the_last_wish_new.jpg/revision/latest/scale-to-width-down/326?cb=20160617190552', 
-      title: 'The Last Wish', 
-      author: 'Andrzej Sapkowski', 
-      id: uuid()},
-    {
-      cover: 'https://vignette.wikia.nocookie.net/witcher/images/4/46/Uk_sword_of_destiny_new.jpg/revision/latest?cb=20151218163406', 
-      title: 'Sword of Destiny', 
-      author: 'Andrzej Sapkowski', 
-      id: uuid()}
-  ], () => {
+  const [books, dispatch] = useReducer(bookReducer, [], () => {
     const localData = localStorage.getItem('books')
-    return localData ? JSON.parse(localData) : []
+    return localData ? JSON.parse(localData) : [
+      {
+        cover: 'https://images-na.ssl-images-amazon.com/images/I/61T2sI9vEDL.jpg',
+        title: 'Pro Vue.js 2', 
+        author: 'Adam Freeman', 
+        id: uuid()},
+      {
+        cover: 'https://www.oreilly.com/library/cover/9780136083238/360h/', 
+        title: 'Clean Code', 
+        author: 'Robert C. Martin', 
+        id: uuid()}
+    ]
   })
   useEffect(() => {
     localStorage.setItem('books', JSON.stringify(books))

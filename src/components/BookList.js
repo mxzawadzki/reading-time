@@ -17,6 +17,7 @@ const BookList = () => {
   ) : (
     <div className="empty">
       <p className="empty__text">Nothing on the list</p>
+      <p className="empty__text empty__text--add">add something</p>
     </div>
   )
 }
