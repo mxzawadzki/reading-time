@@ -186,7 +186,8 @@ body {
 }
 
 .bookform__submit {
-  margin: .5rem 0 4rem 0;
+  display: block;
+  margin: .5rem 0 4rem auto;
   font-family: inherit;
   text-transform: uppercase;
   border: none;
@@ -287,6 +288,7 @@ body {
     display: flex;
     flex-flow: column;
     align-items: flex-start;
+    max-width: 416px;
   }
 
   .bookform__input {
@@ -330,9 +332,8 @@ body {
   }
 
   .bookform {
-    display: flex;
-    flex-flow: column;
     align-items: flex-end;
+    max-width: 100%;
   }
 
   .bookform__input {
