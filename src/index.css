@@ -243,7 +243,7 @@ body {
   .header__text {
     text-align: left;
     font-size: 1.75rem;
-    left: 15.8rem;
+    left: 11.4rem;
 }
 
   .booklist__item {
@@ -283,10 +283,17 @@ body {
     transition: all .2s ease-in-out;
   }
 
+  .bookform {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+  }
+
   .bookform__input {
     max-width: 416px;
     display: block;
     margin: 1rem 0;
+    font-size: 1.4rem;
   }
 
   .bookform__submit {
@@ -304,5 +311,34 @@ body {
     z-index: -1;
     background-color: #ffcf64;
     transition: all .2s ease-in-out;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .booklist__details {
+    margin: 1rem 0 0 4rem;
+  }
+
+  .booklist__title {
+    font-size: 7rem;
+    margin-left: 0rem;
+    line-height: 1;
+  }
+
+  .booklist__button::after {
+    left: -.5rem;
+  }
+
+  .bookform {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+  }
+
+  .bookform__input {
+    max-width: calc(100% - 400px - 5rem);
+    display: block;
+    margin: 1rem 0;
+    font-size: 1.4rem;
   }
 }
